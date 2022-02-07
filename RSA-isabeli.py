@@ -9,7 +9,7 @@ print('# 2 - Cifrar mensagem       #')
 print('# 3 - Descifrar mensagem    #')
 print('#############################')
 
-message = int(input('Digite a mensagem a ser criptografaga: '))5
+message = int(input('Digite a mensagem a ser criptografaga: '))
 
 p = 11
 q = 7

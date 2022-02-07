@@ -18,7 +18,7 @@ def totient(number):
 Verifica se um numero gerado é primo
 '''
 # it isnt the best method to compute prime numbers
-def prime(n): # check if the number is prime
+def prime(n): 
     if (n <= 1):
         return False
     if (n <= 3):
