@@ -12,8 +12,8 @@ print('# 3 - Descifrar mensagem    #')
 print('#############################')
 
 message = int(input())
-
 print('Opção digitada: ', message)
+
 
 # Verifica se um numero gerado é primo
 def prime(n): 
@@ -32,12 +32,19 @@ def prime(n):
         i+=6
     return True
 
+
 # Calcula o totiente do numero primo
+# Um número perfeito de totiente é um número inteiro que é igual à soma de suas iterações de totiente. 
+# Ou seja, aplica-se a função totiente para um número n, aplicá-lo de novo para o resultante da função 
+# totiente, e assim por diante, até que o número 1 seja alcançado, e adicionar em conjunto a sequência 
+# de números resultante; se a soma é igual a n, n é um número perfeito de totiente.
+
 def totient(number): 
     if(prime(number)):
         return number-1
     else:
         return False
+
 
 def mdc(n1,n2):
     rest = 1
@@ -47,12 +54,14 @@ def mdc(n1,n2):
         n2 = rest
     return n1
 
+
 # Gera um numero aleatório E, sasfazendo as condições
 def generate_E(num): 
     while True:
         e = random.randrange(0,num) #or. é 2
         if(mdc(num,e) == 1):
             return e
+
 
 # Função modular entre dois números
 def mod(a,b):
@@ -61,6 +70,7 @@ def mod(a,b):
     else:
         c = a % b
         return c
+
 
 def gerarChavePrivada(primoA, primoB):
     y = totient(primoA) # compute the totient of primoA
@@ -73,6 +83,7 @@ def gerarChavePrivada(primoA, primoB):
         d += 1
     return d
 
+
 def verificaPrimo(primo):
     if(prime(primo) == True):
         print('É primo!')
@@ -80,6 +91,7 @@ def verificaPrimo(primo):
     else:
         print('Não é primo!')
         return False
+
 
 def gerarChavePublica(primoA, primoB):
     n = primoA * primoB 
@@ -107,3 +119,6 @@ if(message == 1):
         chavePublica = gerarChavePublica(primoA, primoB)
         print('A chave pública é:')
         print(chavePublica)
+
+
+elif(message == 2):
