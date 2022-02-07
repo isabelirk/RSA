@@ -122,6 +122,7 @@ def calculate_private_key(toti,e):
 ## MAIN
 if __name__=='__main__':
     text = input("Insert message: ")
+
     p = generate_prime() # generates random P
     q = generate_prime() # generates random Q
     n = p*q # compute N
@@ -129,12 +130,15 @@ if __name__=='__main__':
     x = totient(q) # compute the totient of Q
     totient_de_N = x*y # compute the totient of N
     e = generate_E(totient_de_N) # generate E
-    public_key = (n, e)
 
+    public_key = (n, e)
     print('Your public key:', public_key)
+
     text_cipher = cipher(text,e,n)
     print('Your encrypted message:', text_cipher)
+
     d = calculate_private_key(totient_de_N,e)
     print('Your private key is:', d)
+
     original_text = descifra(text_cipher,n,d)
     print('your original message:', original_text)
