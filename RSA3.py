@@ -53,7 +53,8 @@ def generate_E(num):
         if(mdc(num,e) == 1):
             return e
 
-        
+
+
 '''
 Gera um numero primo aleatório
 '''
@@ -62,6 +63,8 @@ def generate_prime(): # generate the prime number - p e q
         x=random.randrange(1,100) # define the range of the primes
         if(prime(x)==True):
             return x
+
+
 '''
 Função modular entre dois números
 '''
@@ -89,6 +92,8 @@ def cipher(words,e,n): # get the words and compute the cipher
         lista.append(d)
         i += 1
     return lista
+
+    
 
 '''
 Descriptografa um texto criptografado

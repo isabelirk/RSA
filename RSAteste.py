@@ -63,7 +63,6 @@ def mod(a,b):
         return c
 
 def gerarChavePrivada(primoA, primoB):
-    #n = primoA * primoB 
     y = totient(primoA) # compute the totient of primoA
     x = totient(primoB) # compute the totient of primoB
     totient_de_N = x * y # compute the totient of N
@@ -74,8 +73,6 @@ def gerarChavePrivada(primoA, primoB):
         d += 1
     return d
 
-#def gerarChavePublica(primoA, primoB):
-
 def verificaPrimo(primo):
     if(prime(primo) == True):
         print('É primo!')
@@ -83,6 +80,16 @@ def verificaPrimo(primo):
     else:
         print('Não é primo!')
         return False
+
+def gerarChavePublica(primoA, primoB):
+    n = primoA * primoB 
+    y = totient(primoA) # compute the totient of primoA
+    x = totient(primoB) # compute the totient of primoB
+    totient_de_N = x * y # compute the totient of N
+    e = generate_E(totient_de_N) # generate E
+
+    return (n, e)
+
 
 if(message == 1):
     print("Por favor digite dois números primos:")
@@ -93,7 +100,10 @@ if(message == 1):
 
     if(verificaPrimo(primoA) == True and verificaPrimo(primoB) == True):
 
-        #gerarChavePublica(primoA, primoB)
         chavePrivada = gerarChavePrivada(primoA, primoB)
         print('A chave privada é:')
         print(chavePrivada)
+
+        chavePublica = gerarChavePublica(primoA, primoB)
+        print('A chave pública é:')
+        print(chavePublica)
