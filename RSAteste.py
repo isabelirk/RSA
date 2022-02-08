@@ -90,10 +90,20 @@ def gerarChavePublica(primoA, primoB):
     totient_de_N = x * y # compute the totient of N
     e = generate_E(totient_de_N) # generate E
 
-    return (n, e)
+    return (n+e)
+
+
+def criptografa(usuarioArquivo):
+        usuarioArquivo = open(usuarioArquivo,'w')
+
+        usuarioArquivo.write("teste")
+
+        usuarioArquivo.close()
 
 
 continuar = True
+chavePrivada = 0
+chavePublica = 0
 
 while (continuar):
 
@@ -109,6 +119,7 @@ while (continuar):
     print('Opção digitada: ', message)
 
     if(message == 1):
+
         print("Por favor digite dois números primos:")
         print('O primeiro número é...')
         primoA = int(input())
@@ -127,15 +138,42 @@ while (continuar):
 
 
     elif(message == 2):
+
+        #if(chavePublica):
         print('Digite a chave pública:')
         usuarioChavePublica = int(input())
 
-        print('Digite o nome do arquivo que deseja abrir e cifrar a mensagem:')
-        usuarioArquivo = input()
+        if(chavePublica == int(usuarioChavePublica)):
+            print('Digite o nome do arquivo que deseja abrir e cifrar a mensagem:')
+            usuarioArquivo = input()
 
-        usuarioArquivo = open(usuarioArquivo,'w')
-
-        usuarioArquivo.close()
+            criptografa(usuarioArquivo)
+        else:
+            print('Chave pública informada está incorreta ou não existe!')
 
     elif(message == 4):
         continuar = False
+        
+#1-A
+#2-B
+#3-C
+#4-D
+#5-E
+#6-F
+#7-G
+#8-H
+#9-I
+#10-J
+#11-L
+#12-M
+#13-N
+#14-O
+#15-P
+#16-Q
+#17-R
+#18-S
+#19-T
+#20-U
+#21-V
+#22-X
+#23-Z
