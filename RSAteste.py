@@ -94,11 +94,23 @@ def gerarChavePublica(primoA, primoB):
 
 
 def criptografa(usuarioArquivo):
-        usuarioArquivo = open(usuarioArquivo,'w')
+    continuar2 = True
+    while(continuar2):
 
-        usuarioArquivo.write("teste")
+        usuarioArquivo = open(usuarioArquivo,'r')
+        for linha in usuarioArquivo:
+            linha = linha.rstrip()
+            for char in usuarioArquivo:
+                print(char, '-')
 
-        usuarioArquivo.close()
+        #usuarioArquivo.write("teste")
+        #usuarioArquivo.readlines()
+        #print(char)
+
+        #if(not char):
+        break
+
+    usuarioArquivo.close()
 
 
 continuar = True
