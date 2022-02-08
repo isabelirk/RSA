@@ -4,16 +4,6 @@
 
 import random
 
-print('#############################')
-print('# O que deseja fazer?       #')
-print('# 1 - Criar chave           #')
-print('# 2 - Cifrar mensagem       #')
-print('# 3 - Descifrar mensagem    #')
-print('#############################')
-
-message = int(input())
-print('Opção digitada: ', message)
-
 
 # Verifica se um numero gerado é primo
 def prime(n): 
@@ -103,22 +93,49 @@ def gerarChavePublica(primoA, primoB):
     return (n, e)
 
 
-if(message == 1):
-    print("Por favor digite dois números primos:")
-    print('O primeiro número é...')
-    primoA = int(input())
-    print('O segundo número é...')
-    primoB = int(input())
+continuar = True
 
-    if(verificaPrimo(primoA) == True and verificaPrimo(primoB) == True):
+while (continuar):
 
-        chavePrivada = gerarChavePrivada(primoA, primoB)
-        print('A chave privada é:')
-        print(chavePrivada)
+    print('#############################')
+    print('# O que deseja fazer?       #')
+    print('# 1 - Criar chave           #')
+    print('# 2 - Cifrar mensagem       #')
+    print('# 3 - Descifrar mensagem    #')
+    print('# 4 - Sair                  #')
+    print('#############################')
 
-        chavePublica = gerarChavePublica(primoA, primoB)
-        print('A chave pública é:')
-        print(chavePublica)
+    message = int(input())
+    print('Opção digitada: ', message)
+
+    if(message == 1):
+        print("Por favor digite dois números primos:")
+        print('O primeiro número é...')
+        primoA = int(input())
+        print('O segundo número é...')
+        primoB = int(input())
+
+        if(verificaPrimo(primoA) == True and verificaPrimo(primoB) == True):
+
+            chavePrivada = gerarChavePrivada(primoA, primoB)
+            print('A chave privada é:')
+            print(chavePrivada)
+
+            chavePublica = gerarChavePublica(primoA, primoB)
+            print('A chave pública é:')
+            print(chavePublica)
 
 
-elif(message == 2):
+    elif(message == 2):
+        print('Digite a chave pública:')
+        usuarioChavePublica = int(input())
+
+        print('Digite o nome do arquivo que deseja abrir e cifrar a mensagem:')
+        usuarioArquivo = input()
+
+        usuarioArquivo = open(usuarioArquivo,'w')
+
+        usuarioArquivo.close()
+
+    elif(message == 4):
+        continuar = False
