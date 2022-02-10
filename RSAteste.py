@@ -98,11 +98,15 @@ def criptografa(usuarioArquivo):
     #while(continuar2):
     usuarioArquivo = open(usuarioArquivo,'r')
     line = usuarioArquivo.readline()
-    while line != '':
-        linesChar = []
-        linesChar.append(line)
-        for idx in range(len(linesChar)):
-            print(linesChar)     
+
+    #while line != '':
+        #linesChar = []
+        #linesChar.append(line)
+        #for idx in range(len(linesChar)):
+            #char = []
+            #for i in range (len(linesChar)):
+                #char.append(linesChar[i])
+                #print(char)     
         #break
 
     usuarioArquivo.close()
@@ -157,6 +161,9 @@ while (continuar):
             criptografa(usuarioArquivo)
         else:
             print('Chave pública informada está incorreta ou não existe!')
+
+    elif(message == 3):
+        print('Esta função ainda não está implementada!')
 
     elif(message == 4):
         continuar = False
