@@ -121,27 +121,9 @@ def criptografa(usuarioArquivo, n, e):
     usuarioArquivo2.close()
 
 
-<<<<<<< Updated upstream
-def criptografa(usuarioArquivo):
-    continuar2 = True
-    #while(continuar2):
-    usuarioArquivo = open(usuarioArquivo,'r')
-    line = usuarioArquivo.readline()
-
-    #while line != '':
-        #linesChar = []
-        #linesChar.append(line)
-        #for idx in range(len(linesChar)):
-            #char = []
-            #for i in range (len(linesChar)):
-                #char.append(linesChar[i])
-                #print(char)     
-        #break
-=======
 def descriptografa(usuarioArquivo3, n, d):
     dicionario2 = dicionario()
     usuarioArquivo2 = open(usuarioArquivo3,'r')
->>>>>>> Stashed changes
 
     for char in usuarioArquivo2:
         aux = char.split(' ')
@@ -196,7 +178,6 @@ while (continuar):
             print('A chave privada é:')
             print(n, d)
 
-
     elif(message == 2):
 
         print('Digite o primeiro valor da chave pública:') #n
@@ -227,9 +208,6 @@ while (continuar):
             descriptografa(usuarioArquivo3, n, d)
         else:
             print('Chave privada informada está incorreta ou não existe!')
-
-    elif(message == 3):
-        print('Esta função ainda não está implementada!')
 
     elif(message == 4):
         continuar = False
